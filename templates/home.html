@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<div>
+<h1 class="company">Mechlin Technology</h1>
+<!--    <a href="login.html" >Login-->
+<!--        <a href="signup.html" >Signup</a>-->
+    <a href="account/register" >Register</a>
+
+    <div class="employees">
+        {% for employee in employees %}
+        <div>
+            <p>Name: {{employee.name}}</p>
+            <p>Employee Id: {{employee.employee_Id}} </p>
+            <p>Description: {{employee.details}} </p>
+            <p>Sailary: {{employee.salary}} </p>
+            <div>
+
+            </div>
+                <p>Designation</p>
+                {% if employee.developer %}
+                <p>Software Developer</p>
+                 {% else %}
+                <p> Business Developer </p>
+                {% endif %}
+            </div>
+          {% endfor %}
+
+    </div>
+
+</div>
+<style>
+    .company{
+        color: red;
+        margin-left: 35%;
+    }
+    .employees{
+        margin-left: 25%;
+    }
+</style>
+</body>
+</html>
